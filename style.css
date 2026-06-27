@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap');
+
+body {
+    background: linear-gradient(180deg, #dbeafe 0%, #f1f5f9 40%, #e2e8f0 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #334155;
+    overflow-x: hidden;
+}
+
+.serif-font {
+    font-family: 'Playfair Display', serif;
+}
+
+/* --- Pure CSS Layered Cake --- */
+.cake-container {
+    position: relative;
+    width: 220px;
+    height: 240px;
+    margin: 0 auto;
+}
+
+.cake-tier {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    border-radius: 16px 16px 4px 4px;
+    box-shadow: inset 0 -12px 0 #f8fafc, 0 10px 20px rgba(148, 163, 184, 0.12);
+}
+
+/* Tier Sizing Adjustments */
+.t-1 { width: 200px; height: 65px; bottom: 0; border: 2px solid #e2e8f0; }
+.t-2 { width: 150px; height: 55px; bottom: 63px; border: 2px solid #e2e8f0; }
+.t-3 { width: 100px; height: 45px; bottom: 116px; border: 2px solid #e2e8f0; }
+
+/* Elegant Decorative Gold Trims */
+.cake-tier::after {
+    content: '';
+    position: absolute;
+    bottom: 6px; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #d97706, #fcd34d, #d97706);
+}
+
+/* Candle Mechanics */
+.candle {
+    position: absolute;
+    width: 4px;
+    height: 18px;
+    background: #cbd5e1;
+    top: -18px;
+}
+
+.flame {
+    position: absolute;
+    top: -12px; left: -2px;
+    width: 8px; height: 14px;
+    background: #f59e0b;
+    border-radius: 50% 50% 20% 20%;
+    box-shadow: 0 0 10px #f59e0b;
+    animation: flicker 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+    0% { transform: scale(1) rotate(-2deg); }
+    100% { transform: scale(1.15) rotate(3deg); }
+}
+
+/* Butterfly Animations */
+.butterfly {
+    position: absolute;
+    font-size: 20px;
+    opacity: 0.6;
+    pointer-events: none;
+    animation: floatAround 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatAround {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-20px) rotate(15deg); }
+}
+
+/* Timeline Route Tracing Bar */
+.curved-timeline-line {
+    position: absolute;
+    left: 18px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #93c5fd, #cbd5e1, #93c5fd);
+    transform: translateX(-50%);
+    z-index: 0;
+}
